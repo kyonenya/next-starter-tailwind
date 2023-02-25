@@ -53,7 +53,7 @@ const Home: NextPage = () => {
         Handling Hover, Focus, and Other States
       </h2>
 
-      <div className="flex flex-col items-center space-y-4">
+      <div className="flex flex-col items-center space-y-4 mb-4">
         <button className="max-w-lg bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 p-2 rounded-xl">
           Save changes
         </button>
@@ -77,6 +77,40 @@ const Home: NextPage = () => {
             Create a new project from a variety of starting templates.
           </p>
         </a>
+      </div>
+
+      {/* Responsive Design */}
+      <h2 className="text-2xl text-center font-bold mb-2">Responsive Design</h2>
+      <div className="flex flex-col items-center">
+        <img className="w-16 md:w-32 lg:w-48" src="/vercel.svg" />
+      </div>
+
+      <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div className="md:flex">
+          <div className="md:shrink-0">
+            <img
+              className="h-48 w-full object-cover md:h-full md:w-48"
+              src="/vercel.svg"
+              alt="Modern building architecture"
+            />
+          </div>
+          <div className="p-8">
+            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+              Company retreats
+            </div>
+            <a
+              href="#"
+              className="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
+            >
+              Incredible accommodation for your team
+            </a>
+            <p className="mt-2 text-slate-500">
+              Looking to take your team away on a retreat to enjoy awesome food
+              and take in some sunshine? We have a list of places to do just
+              that.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   )
