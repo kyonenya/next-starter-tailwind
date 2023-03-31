@@ -10,6 +10,17 @@ const Page: NextPage = () => {
         <title>Flexbox ドットインストール</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className="flex gap-2">
+        <div className="flex flex-col items-center w-36">
+          <img className="h-24 w-24" src="/vercel.svg" alt="ChitChat Logo" />
+          <span className="text-center">GitHub</span>
+        </div>
+        <div className="flex flex-col items-center w-36">
+          <img className="h-24 w-24" src="/vercel.svg" alt="ChitChat Logo" />
+          <span>SoundCloud</span>
+        </div>
+      </div>
+      <Spacer />
       <span className="font-bold">
         #03
         フレックスコンテナ用のプロパティとフレックスアイテム用のプロパティがある
@@ -116,6 +127,33 @@ const Page: NextPage = () => {
         <div className="w-20 h-20 bg-orange-200"></div>
       </div>
       <Spacer />
+      <span className="font-bold">#08 flex-wrap 折り返し</span>
+      <br />
+      デフォルトでは縮もうとする
+      <div className="flex w-36 border-2">
+        <div className="w-10 h-10 bg-pink-200 text-center">1</div>
+        <div className="w-10 h-10 bg-blue-200 text-center">2</div>
+        <div className="w-10 h-10 bg-orange-200 text-center">3</div>
+        <div className="w-10 h-10 bg-teal-200 text-center">4</div>
+        <div className="w-10 h-10 bg-gray-200 text-center">5</div>
+      </div>
+      flex-wrap
+      <div className="flex flex-wrap w-36 border-2">
+        <div className="w-10 h-10 bg-pink-200 text-center">1</div>
+        <div className="w-10 h-10 bg-blue-200 text-center">2</div>
+        <div className="w-10 h-10 bg-orange-200 text-center">3</div>
+        <div className="w-10 h-10 bg-teal-200 text-center">4</div>
+        <div className="w-10 h-10 bg-gray-200 text-center">5</div>
+      </div>
+      space-between も <strong>行ごとに</strong> space-between される
+      <div className="flex flex-wrap justify-between w-36 border-2">
+        <div className="w-10 h-10 bg-pink-200 text-center">1</div>
+        <div className="w-10 h-10 bg-blue-200 text-center">2</div>
+        <div className="w-10 h-10 bg-orange-200 text-center">3</div>
+        <div className="w-10 h-10 bg-teal-200 text-center">4</div>
+        <div className="w-10 h-10 bg-gray-200 text-center">5</div>
+      </div>
+      <Spacer />
       <span className="font-bold">#09 gap で要素のすき間</span>
       <div className="flex justify-center gap-4 h-20 border-sky-200 border-2">
         <div className="w-10 h-10 bg-pink-200 text-center">1</div>
@@ -123,6 +161,39 @@ const Page: NextPage = () => {
         <div className="w-10 h-10 bg-orange-200 text-center">3</div>
       </div>
       <hr className="my-4 border-gray-500" />
+      <Spacer />
+      <span className="font-bold">
+        #12 flex ではみ出たり足りなかったりする要素の伸縮を操る
+      </span>
+      <br />
+      <ul>
+        <li>
+          flex: initial：
+          <strong className="text-red-700">広がらないけど縮もうとする</strong>
+        </li>
+      </ul>
+      <div className="flex border-2 w-90">
+        <div className="w-12 h-10 bg-pink-200"></div>
+        <div className="w-24 h-10 bg-orange-200"></div>
+        <div className="w-36 h-10 bg-blue-200"></div>
+      </div>
+      <div className="flex border-2 w-48">
+        <div className="w-12 h-10 bg-pink-200"></div>
+        <div className="w-24 h-10 bg-orange-200"></div>
+        <div className="w-36 h-10 bg-blue-200"></div>
+      </div>
+      <ul>
+        <li>flex: auto：伸縮自在</li>
+        <li>flex: 1 　 ：伸縮自在、でもこっちが多く採用される</li>
+        <li>flex: none：固まる</li>
+      </ul>
+      <br />
+      <div className="flex border-2 w-90">
+        <div className="w-12 h-10 bg-pink-200">flex: 0</div>
+        <div className="flex-1 w-24 h-10 bg-orange-200">flex: 1</div>
+        <div className="w-36 h-10 bg-blue-200">flex: 0</div>
+      </div>
+      <Spacer />
       <span className="font-bold ">#10 align-self で交差軸方向で単独行動</span>
       <br />
       align-self: center：2だけ交差軸↓中央にしたい（self-center）
@@ -141,6 +212,15 @@ const Page: NextPage = () => {
         <div className="w-10 h-10 ml-auto bg-orange-200 text-sm text-center ">
           ml-auto
         </div>
+      </div>
+      <Spacer />
+      <span className="font-bold">#11 order で要素をCSSで並び替える</span>
+      <br />
+      order -1 → 0 → 1 → 2 の順に横並び
+      <div className="flex border-2">
+        <div className="w-10 h-10 bg-pink-200 order-10">o10</div>
+        <div className="w-10 h-10 bg-blue-200 order-1">o1</div>
+        <div className="w-10 h-10  bg-orange-200 order-3">o3</div>
       </div>
       {/* </div> */}
       <div className="mb-20" />
